@@ -8,7 +8,7 @@ class LoginForm extends Component {
 
     onEmailChange(text) {
         this.props.emailChanged(text);
-    }
+    } 
 
     onPasswordChange(text) {
         this.props.passwordChanged(text);
@@ -38,7 +38,7 @@ class LoginForm extends Component {
                         secureTextEntry
                         label="Password"
                         placeholder="password"
-                        onChangeText={this.onPasswordChange.bind(this)}
+                        onChangePassword={this.onPasswordChange.bind(this)}
                         value={this.props.password.value}
                     />
                 </CardItem>
@@ -55,9 +55,11 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = state => {
+    const { email, password } = state.auth; 
+    console.log("state", state)
     return {
-        email: state.auth.email, 
-        password: state.auth.password
+        email: email, 
+        password: password
     }
 }
 

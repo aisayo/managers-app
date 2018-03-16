@@ -7,8 +7,7 @@ import {
 
 export const emailChanged = (text) => {
     return {
-        type: 'EMAIL_CHANGED', //this is the connect
-        //between action creator and reducer
+        type: 'EMAIL_CHANGED',
         payload: text
     };
 };
@@ -24,7 +23,8 @@ export const loginUser = ({ email, password }) => {
     return (dispatch) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => {
-            dispatch({ type: 'LOGIN_USER_SUCCESS', payload: user });
+            dispatch({ type: 'LOGIN_USER_SUCCESS', payload: user})
         });
+            
         };
-    }
+    };
