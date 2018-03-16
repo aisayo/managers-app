@@ -8,7 +8,7 @@ class LoginForm extends Component {
 
     onEmailChange(text) {
         this.props.emailChanged(text);
-    } 
+      }
 
     onPasswordChange(text) {
         this.props.passwordChanged(text);
@@ -56,7 +56,6 @@ class LoginForm extends Component {
 
 const mapStateToProps = state => {
     const { email, password } = state.auth; 
-    console.log("state", state)
     return {
         email: email, 
         password: password
