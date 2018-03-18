@@ -30,7 +30,6 @@ export const loginUser = ({ email, password }) => {
                 .then(user => loginUser(dispatch, user))
                 .catch(() => loginUserFail(dispatch));
         });
-            
         };
     };
 
